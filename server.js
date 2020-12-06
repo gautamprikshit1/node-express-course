@@ -6,11 +6,12 @@ const mockUserData = [
     {name: 'Gautam'}
 ];
 
-app.get('/users', (req, res) => {
+app.get('/users/:id', (req, res) => {
+    console.log(req.params.id);
     res.json({
         success: true,
-        message: "Successfully got users",
-        users: mockUserData
+        message: "Got one user",
+        users: req.params.id
     });
 });
 
